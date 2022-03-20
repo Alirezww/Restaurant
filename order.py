@@ -2,6 +2,7 @@
 # TODO : write its sample classmethod here
 import uuid
 from datetime import datetime
+from khayyam import JalaliDatetime
 
 
 class Order:
@@ -16,3 +17,7 @@ class Order:
     @classmethod
     def sample(cls):
         return cls(in_out='out', bill='bill', table='table')
+
+    @property
+    def jalali_datetime(self):
+        return JalaliDatetime(self.datetime)

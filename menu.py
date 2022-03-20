@@ -2,6 +2,7 @@
 # TODO : write sample classmethod here
 import uuid
 from datetime import datetime
+from khayyam import JalaliDatetime
 
 
 class Item:
@@ -40,3 +41,7 @@ class Item:
     @classmethod
     def sample(cls):
         return cls(price='1200', type='Food', name='pizza')
+
+    @property
+    def jalali_datetime(self):
+        return JalaliDatetime(self.datetime)

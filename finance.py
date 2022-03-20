@@ -3,6 +3,7 @@
 
 import uuid
 from datetime import datetime
+from khayyam import JalaliDatetime
 
 
 class Bill:
@@ -27,3 +28,7 @@ class Payment:
     @classmethod
     def sample(cls):
         return cls(payment_type='cash', price='12000')
+
+    @property
+    def jalali_datetime(self):
+        return JalaliDatetime(self.datetime)
