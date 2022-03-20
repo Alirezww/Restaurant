@@ -1,6 +1,7 @@
 # TODO : define class Order here
 # TODO : write its sample classmethod here
 import uuid
+from datetime import datetime
 
 
 class Order:
@@ -8,6 +9,7 @@ class Order:
         self.uuid = uuid.uuid4()
         self.items_dict = dict()
         self.in_out = in_out
+        self.datetime = datetime.now()
         self.bill = bill
         self.table = table
 
