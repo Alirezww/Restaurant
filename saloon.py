@@ -7,13 +7,14 @@ import uuid
 class Table:
     table_list = list()
 
-    def __init__(self, capacity, number, reserved):
+    def __init__(self, capacity, number):
         self.uuid = uuid.uuid4()
         self.capacity = capacity
         self.number = number
-        self.reserved = reserved
+        self.reserved = False
         self.is_available = True
+        self.table_list.append(self)
 
     @classmethod
     def sample(cls):
-        return cls(capacity=4, number=2, reserved=False)
+        return cls(capacity=4, number=2)
