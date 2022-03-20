@@ -31,10 +31,15 @@ class Item:
         return self.item_count
 
     @classmethod
-    def search(cls, uuid):
+    def search(cls, uuid=None, item_id=None):
         item_list = [*cls.Food_list, *cls.Starter_list, *cls.Beverage_list]
+
+        id_temp = uuid
+        if id_temp is None:
+            id_temp = item_id
+
         for item in item_list:
-            if item.uuid == uuid:
+            if id_temp in getattr(item, id_temp):
                 return item
             return None
 
