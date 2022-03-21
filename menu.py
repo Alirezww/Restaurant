@@ -51,3 +51,15 @@ class Item:
     @property
     def jalali_datetime(self):
         return JalaliDatetime(self.datetime)
+
+    @classmethod
+    def prompt(cls):
+        name = input("please enter foods'name : ")
+        price = input("please enter foods'price : ")
+        type = input("please enter foods'type : ")
+        result = {
+            'name': name,
+            'price': price,
+            'type': type
+        }
+        return result
