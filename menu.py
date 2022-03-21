@@ -5,6 +5,8 @@ from datetime import datetime
 from khayyam import JalaliDatetime
 from constanst import MENU_TYPE
 
+now = datetime.now()
+
 
 class Item:
     item_count = 0
@@ -15,7 +17,7 @@ class Item:
     def __init__(self, name, type, price):
         self.item_id = self.get_item_id()
         self.uuid = uuid.uuid4()
-        self.datetime = datetime.now()
+        self.datetime = now.strftime("%m/%d/%Y, %H:%M:%S")
         self.name = name
         self.type = type
         self.price = price
