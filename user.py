@@ -20,7 +20,7 @@ class Supervisor:
     @classmethod
     def create_item(cls):
         item_data = Item.prompt()
-        if Item.search(item_data['uuid']) is None:
+        if Item.search_by_name(item_data['name']) is None:
             item = Item(**item_data)
             return item
         return 'It is already satisfied.'
