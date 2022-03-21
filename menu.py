@@ -16,7 +16,7 @@ class Item:
 
     def __init__(self, name, type, price):
         self.item_id = self.get_item_id()
-        self.uuid = uuid.uuid4()
+        self.uuid = uuid.uuid4().node
         self.datetime = now.strftime("%m/%d/%Y, %H:%M:%S")
         self.name = name
         self.type = type
@@ -77,6 +77,4 @@ class Item:
 
     def serialize(self):
         data = self.__dict__
-        data.pop('uuid')
-        data.pop('datetime')
         return data
