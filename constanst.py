@@ -6,3 +6,5 @@ SUPERVISOR_CREDENTIAL = [
         'password': 1234
     }
 ]
+
+ITEM_JSON_FILE_PATH = '/home/alireza/Desktop/Restuarant/src/fixtures'
