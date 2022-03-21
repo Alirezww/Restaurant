@@ -11,10 +11,6 @@ class Item:
     Food_list = list()
     Beverage_list = list()
     Starter_list = list()
-    item_list = []
-    item_list.extend(Food_list)
-    item_list.extend(Beverage_list)
-    item_list.extend(Starter_list)
 
     def __init__(self, name, type, price):
         self.item_id = self.get_item_id()
@@ -50,7 +46,9 @@ class Item:
 
     @classmethod
     def search_by_name(cls, name):
-        for item in cls.item_list:
+        item_list = [*cls.Food_list, *cls.Starter_list, *cls.Beverage_list]
+
+        for item in item_list:
             if item.name == name:
                 return None
             return item
@@ -77,4 +75,6 @@ class Item:
 
     def serialize(self):
         data = self.__dict__
+        data.pop('uuid')
+        data.pop('datetime')
         return data
