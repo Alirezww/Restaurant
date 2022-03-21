@@ -33,7 +33,7 @@ class Item:
         return self.item_count
 
     @classmethod
-    def search(cls, uuid=None, item_id=None):
+    def search_by_id(cls, uuid=None, item_id=None):
         item_list = [*cls.Food_list, *cls.Starter_list, *cls.Beverage_list]
 
         id_temp = uuid
