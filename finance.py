@@ -7,14 +7,17 @@ from khayyam import JalaliDatetime
 
 
 class Bill:
-    def __init__(self, total_price, payment):
+    def __init__(self, total_price):
         self.uuid = uuid.uuid4()
         self.total_price = total_price
-        self.payment = payment
+        self.payment = self.create_payment()
 
     @classmethod
     def sample(cls):
-        return cls(total_price='1200', payment='cash')
+        return cls(total_price='1200')
+
+    def create_payment(self) -> str:
+        pass
 
 
 class Payment:
