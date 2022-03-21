@@ -29,7 +29,7 @@ class Item:
             self.Food_list.append(self)
 
     def get_item_id(self):
-        self.item_id += 1
+        self.item_count += 1
         return self.item_count
 
     @classmethod
