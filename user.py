@@ -24,3 +24,10 @@ class Supervisor:
             item = Item(**item_data)
             return item
         return 'It is already satisfied.'
+
+    @classmethod
+    def item_data(cls):
+        tmp = []
+        for item in Item.item_list:
+            tmp.append(item.serialize())
+        return tmp
