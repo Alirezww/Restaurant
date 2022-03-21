@@ -3,6 +3,7 @@
 import uuid
 from datetime import datetime
 from khayyam import JalaliDatetime
+from constanst import MENU_TYPE
 
 
 class Item:
@@ -19,9 +20,9 @@ class Item:
         self.type = type
         self.price = price
 
-        if self.type.lower() == 'starter':
+        if self.type.lower() == MENU_TYPE[1].lower():
             self.Starter_list.append(self)
-        elif self.type.lower() == 'beverage':
+        elif self.type.lower() == MENU_TYPE[2].lower():
             self.Beverage_list.append(self)
         else:
             self.Food_list.append(self)
