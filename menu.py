@@ -46,6 +46,13 @@ class Item:
             return None
 
     @classmethod
+    def search_by_name(cls, name):
+        for item in cls.item_list:
+            if item.name == name:
+                return None
+            return item
+
+    @classmethod
     def sample(cls):
         return cls(price='1200', type='Food', name='pizza')
 
