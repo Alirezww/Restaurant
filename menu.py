@@ -64,3 +64,7 @@ class Item:
             'type': type
         }
         return result
+
+    def serialize(self):
+        data = self.__dict__
+        return data
