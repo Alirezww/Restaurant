@@ -52,8 +52,8 @@ class Item:
 
         for item in item_list:
             if item.name == name:
-                return None
-            return item
+                return item
+            return None
 
     @classmethod
     def sample(cls):
