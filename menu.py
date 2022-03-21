@@ -11,6 +11,7 @@ class Item:
     Food_list = list()
     Beverage_list = list()
     Starter_list = list()
+    item_list = [*Food_list, *Starter_list, *Beverage_list]
 
     def __init__(self, name, type, price):
         self.item_id = self.get_item_id()
