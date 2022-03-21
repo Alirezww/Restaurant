@@ -28,6 +28,6 @@ class Supervisor:
     @classmethod
     def item_data(cls):
         tmp = []
-        for item in Item.item_list:
+        for item in [*Item.Food_list, *Item.Beverage_list, *Item.Starter_list]:
             tmp.append(item.serialize())
         return tmp
