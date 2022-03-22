@@ -42,7 +42,7 @@ class Item:
             id_temp = item_id
 
         for item in item_list:
-            if id_temp in getattr(item, id_temp):
+            if id_temp in [item.uuid, item.item_id]:
                 return item
             return None
 
