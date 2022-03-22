@@ -78,4 +78,7 @@ class Item:
     def serialize(self):
         data = self.__dict__
         data.pop('item_count')
+        data.pop('uuid')
+        data.pop('item_id')
+        data.pop('datetime')
         return data
