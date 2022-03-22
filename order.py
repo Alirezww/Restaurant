@@ -33,3 +33,13 @@ class Order:
     @property
     def total_price(self):
         return calculate(self.items_dict)
+
+    @classmethod
+    def prompt(cls):
+        in_out = input('Do you want to eat here or no ? (Enter in/out)')
+        number_table = input('Please enter table number : ')
+        result = {
+            'in_out': in_out,
+            'number_table': number_table
+        }
+        return result
