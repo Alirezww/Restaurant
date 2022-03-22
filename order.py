@@ -4,6 +4,7 @@ import uuid
 from datetime import datetime
 from khayyam import JalaliDatetime
 from finance import Bill
+from utils import calculate
 
 
 class Order:
@@ -31,4 +32,4 @@ class Order:
 
     @property
     def total_price(self):
-        return 12000  # This is just test
+        return calculate(self.items_dict)
