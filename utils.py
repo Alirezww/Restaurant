@@ -17,6 +17,12 @@ def save_to_file(file_path, data):
         print('it was successfully.')
 
 
+def load_items(file_path):
+    with open(file_path, 'r') as f:
+        items = json.loads(f.read())
+    return items
+
+
 def calculate(order_dict):
     item = Item.search_by_id(uuid=order_dict['uuid'])
     if item is not None:
