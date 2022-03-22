@@ -1,4 +1,5 @@
 from menu import Item
+from saloon import Table
 
 
 # Todo : define class Supervisor here
@@ -31,3 +32,18 @@ class Supervisor:
         for item in [*Item.Food_list, *Item.Beverage_list, *Item.Starter_list]:
             tmp.append(item.serialize())
         return tmp
+
+    @classmethod
+    def table_data(cls):
+        tmp = []
+        for table in Table.table_list:
+            tmp.append(table.serialize())
+        return tmp
+
+    @classmethod
+    def create_table(cls):
+        table_data = Table.prompt()
+        if Table.search(table_data['number']) is None:
+            table = Table(**table_data)
+            return table
+        return 'it is already satisfied..'

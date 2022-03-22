@@ -16,8 +16,10 @@ class Bill:
     def sample(cls):
         return cls(total_price='1200')
 
-    def create_payment(self) -> str:
-        pass
+    def create_payment(self):
+        payment_data = Payment.prompt()
+        payment = Payment(**payment_data, price=self.total_price)
+        return payment
 
 
 class Payment:
@@ -35,3 +37,11 @@ class Payment:
     @property
     def jalali_datetime(self):
         return JalaliDatetime(self.datetime)
+
+    @classmethod
+    def prompt(cls):
+        payment_type = input('Please enter your payment type : ')
+        result = {
+            'payment_type': payment_type
+        }
+        return result

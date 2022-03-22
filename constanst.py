@@ -8,3 +8,4 @@ SUPERVISOR_CREDENTIAL = [
 ]
 
 ITEM_JSON_FILE_PATH = '/home/alireza/Desktop/Restuarant/src/fixtures/items.json'
+TABLE_JSON_FILE_PATH = '/home/alireza/Desktop/Restuarant/src/fixtures/tables.json'
