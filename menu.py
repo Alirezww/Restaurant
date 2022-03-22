@@ -77,4 +77,5 @@ class Item:
 
     def serialize(self):
         data = self.__dict__
+        data.pop('item_count')
         return data
